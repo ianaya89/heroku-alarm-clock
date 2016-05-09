@@ -21,12 +21,12 @@ You need to run the application with these environment variables:
   1. `PING_MINUTES` -> **integer value from 1 to 59**
   2. `PING_HOURS` -> **list of all hours separated with ','**
   3. `PING_URLS` -> **list of all heroku apps url's separated with ','**
-  4. `PING_MINUTES` -> **redis db connection string**
+  4. `REDIS_URL` -> **redis db connection string**
  
     ```
     PING_MINUTES=30
     PING_HOURS=6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
-    PING_URLS=http://my-domain.com,http://my-domain2.com;
+    PING_URLS=http://my-domain.com,http://my-domain2.com
     REDIS_URL=redis://redisHost.com:17411
     ```
   

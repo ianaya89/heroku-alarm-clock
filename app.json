@@ -2,13 +2,30 @@
   "name": "heroku alarm clock",
   "description": "cron node app to prevent heroku apps from sleeping.",
   "repository": "https://github.com/ianaya89/heroku-alarm-clock",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
   "keywords": [
-    "heroku",
-    "alarm",
-    "clock",
-    "sleep",
-    "cron",
-    "job"
-  ]
+  "heroku",
+  "alarm",
+  "clock",
+  "sleep",
+  "cron",
+  "job"
+  ],
+  "env": {
+    "PING_MINUTES": {
+      "description": "integer value from 1 to 59",
+      "value": "30"
+    },
+    "PING_HOURS": {
+      "description": "list of all hours separated with ','",
+      "value": "6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23"
+    },
+    "PING_URLS": {
+      "description": "list of all heroku apps url's separated with ','",
+      "value": "http://my-domain.com,http://my-domain2.com"
+    },
+    "REDIS_URL": {
+      "description": "redis db connection string",
+      "value": "redis://redisHost.com:17411"
+    }
+  }
 }

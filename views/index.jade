@@ -1,0 +1,14 @@
+html
+  head
+    title Heroku Alarm Clock
+  body
+    h1 Heroku Alarm Clock
+    hr
+
+    h3 URL's Pings  
+    ul 
+      each r in results
+        li
+          a(href=r.url, target='_blank')= r.url
+          span= ': ' + r.response.statusCode + ' -> ' + r.response.date
+

@@ -1,8 +1,7 @@
 const cron = require('node-cron');
-const PING_TIME = process.env.PING_TIME || 30;
+const config = require('./config');
 
-
-let pingTime = `* */${PING_TIME} * * * *`;
+let pingTime = `* */${config.pingMinutes} 6-0 * * *`;
 
 cron.schedule(pingTime, () => {
   console.log('running a task every minute');

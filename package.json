@@ -9,6 +9,7 @@
   "author": "Ignacio Anaya <ignacio.anaya89@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "node-cron": "^1.1.1",
     "node-schedule": "^1.1.0"
   }

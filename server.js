@@ -4,6 +4,9 @@ const request = require('request');
 const cron = require('node-cron');
 const config = require('./config');
 
+const express = require('express');
+const app = express();
+
 const redis = require('redis');
 const redisClient = redis.createClient(config.redisUrl);
 
@@ -40,3 +43,11 @@ function pingHerokuApps(urls) {
     urls.forEach((url) => pingHerokuApp(url));
   }
 }
+
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+app.listen(config.port, function () {
+  console.log(`[info] running web server at: ${config.port}`);
+});

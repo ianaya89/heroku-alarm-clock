@@ -1,0 +1,14 @@
+{
+  "name": "heroku alarm clock",
+  "description": "cron node app to prevent heroku apps from sleeping.",
+  "repository": "https://github.com/ianaya89/heroku-alarm-clock",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": [
+    "heroku",
+    "alarm",
+    "clock",
+    "sleep",
+    "cron",
+    "job"
+  ],
+}

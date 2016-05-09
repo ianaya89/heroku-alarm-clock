@@ -17,15 +17,23 @@ Simple: any X minutes a cron job will ping all the url's (heroku apps) you have 
 
 ### Set Up
 You need to run the application with these environment variables:
+  
+  1. `PING_MINUTES` -> **integer value from 1 to 59**
+  2. `PING_HOURS` -> **list of all hours separeted with ','**
+  3. `PING_URLS` -> **list of all heroku apps url's**
+  4. `PING_MINUTES` -> **redis db connection string**
+ 
   ```
-  PING_MINUTES=minutes
-  PING_HOURS=hours
-  PING_URLS=url1;url2;url3
-  REDIS_URL=redisUrl
+  PING_MINUTES=30
+  PING_HOURS=6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+  PING_URLS=http://my-domain.com;http://my-domain2.com;
+  REDIS_URL=redis://redisHost.com:17411
   ```
 The app is using [dotenv](https://www.npmjs.com/package/dotenv) nodejs module to emulate environment variables. 
 You can create a `.env` file at the root of the repo and put all the settings there (check the `sample.env` demo file).
 
-### Run It
+### Runt It
+
+### Run using `.env` file
 1. Open a terminal and locate the repo directory.
-2. Run: `$ npm start`
+2. Run: `$ node server`

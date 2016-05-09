@@ -1,0 +1,15 @@
+{
+  "name": "heroku-alarm-clock",
+  "version": "1.0.0",
+  "description": "node app to prevent node apps from sleeping.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ignacio Anaya <ignacio.anaya89@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-cron": "^1.1.1",
+    "node-schedule": "^1.1.0"
+  }
+}

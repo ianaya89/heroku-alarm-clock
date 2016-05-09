@@ -10,13 +10,15 @@ const app = express();
 const redis = require('redis');
 const redisClient = redis.createClient(config.redisUrl);
 
-let pingTime = `*/${config.pingMinutes} 0,1,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 * * *`;
+let pingTime = `*/${config.pingMinutes} ${config.pingHours} * * *`;
+let lastPing;
 
 redisClient.on('error', (err) => console.log(`[error] ${err}`));
 redisClient.on('connect', (msg) => console.log(`[info] redis client connected`));
 
 cron.schedule(pingTime, () => {
   console.log('[info] starting apps ping...')
+  lastPing = new Date();
   pingHerokuApps(config.pingUrls);
 });
 
@@ -62,7 +64,7 @@ function getLastPings(urls, fn) {
   }
 
   urls.forEach((url) => {
-    redisClient.get(url, (err, res) => {console.log(url); callback(err, res, url)});
+    redisClient.get(url, (err, res) => callback(err, res, url));
   });
 }
 
@@ -71,7 +73,10 @@ app.use(express.static('public'));
 
 app.get('/', function (req, res) {
   getLastPings(config.pingUrls, function(results) {
-    res.render('index', {results: results});
+    res.render('index', {
+      results: results,
+      lastPing: lastPing
+    });
   });
 });
 

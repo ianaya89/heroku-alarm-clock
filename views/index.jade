@@ -6,6 +6,7 @@ html
     hr
 
     h3 URL's Pings  
+      small= 'Last time ping: ' + (lastPing  || '-')
     ul 
       each r in results
         li

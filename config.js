@@ -1,3 +1,5 @@
+'use strict';
+
 let config = {};
 
 config.pingMinutes = process.env.PING_MINUTES || 30;

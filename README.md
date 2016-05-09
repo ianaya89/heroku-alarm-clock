@@ -34,7 +34,10 @@ You need to run the application with these environment variables:
 
 ### Runt It
 1. Open a terminal and locate the repo directory.
-2. Run `$ PING_MINUTES='30' PING_HOURS='6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23' PING_URLS='http://my-domain.com;http://my-domain2.com' REDIS_URL='redis://redisHost.com:17411' node server`
+2. Run: 
+  ```
+    $ PING_MINUTES='30' PING_HOURS='6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23' PING_URLS='http://my-domain.com;http://my-domain2.com' REDIS_URL='redis://redisHost.com:17411' node server
+  ```
 
 ### Run using `.env` file
 1. Open a terminal and locate the repo directory.
